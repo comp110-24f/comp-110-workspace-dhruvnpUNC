@@ -9,6 +9,7 @@ def mimic(message: str) -> str:
 
 
 def main() -> None:
+    """Where the Mimic Function will be ran!"""
     print(mimic(message=input("What is your message?")))
 
 
