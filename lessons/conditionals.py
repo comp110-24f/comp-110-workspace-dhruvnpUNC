@@ -28,19 +28,5 @@ def check_first_letter(word: str, letter: str) -> str:
         return "No Match"
 
 
-# print(check_first_letter(word="happy", letter="h"))
-# print(check_first_letter(word="happy", letter="s"))
-
-
-def get_weather_report() -> str:
-    weather = input("What is the weather?")
-    if (weather == "rainy") or (weather == "cold"):
-        print("Bring a jacket!")
-    elif weather == "hot":
-        print("keep cool out there!")
-    else:
-        print("I don't recognize this weather,")
-    return weather
-
-
-print(get_weather_report())
+print(check_first_letter(word="happy", letter="h"))
+print(check_first_letter(word="happy", letter="s"))
