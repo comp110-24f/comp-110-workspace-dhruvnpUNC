@@ -29,3 +29,5 @@ def main_planner(guests: int) -> None:
 
 if __name__ == "__main__":
     main_planner(guests=int(input("How many guests are attending your tea party? ")))
+
+ """test"""
