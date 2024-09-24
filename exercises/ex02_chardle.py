@@ -5,20 +5,22 @@ __author__: str = "730767591"
 
 def input_word() -> str:
     """Prompts the user to input a word and checks to see if its 5 letters long."""
-    typed_word: str = input("Enter a 5 letter word: ")
-    if len(typed_word) != 5:
+    typed_word: str = input("Enter a 5-character word: ")
+    if len(typed_word) == 5:
+        return typed_word
+    else:
         print("Error: word must contain 5 characters.")
         exit()
-    return typed_word
 
 
 def input_letter() -> str:
     """Prompts a user to input a letter and checks to see if its exactly one character."""
     typed_letter = input("Enter a single character: ")
-    if len(typed_letter) != 1:
+    if len(typed_letter) == 1:
+        return typed_letter
+    else:
         print("Error: Character must be a single character.")
         exit()
-    return typed_letter
 
 
 def contains_char(word: str, letter: str) -> None:
