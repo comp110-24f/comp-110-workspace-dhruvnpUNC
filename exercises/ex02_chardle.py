@@ -17,6 +17,7 @@ def input_letter() -> str:
     """Prompts a user to input a letter and checks to see if its exactly one character."""
     typed_letter = input("Enter a single character: ")
     if len(typed_letter) == 1:
+        return typed_letter
     else:
         print("Error: Character must be a single character.")
         exit()
