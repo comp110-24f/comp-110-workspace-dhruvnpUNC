@@ -3,7 +3,9 @@
 
 class Fish:
     """Establishing our Fish class."""
+
     age: int
+
     def __init__(self):
         """Creating a new fish object."""
         self.age = 0
