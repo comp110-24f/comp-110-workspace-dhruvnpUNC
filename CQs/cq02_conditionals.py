@@ -17,7 +17,6 @@ def guess_a_number() -> None:
         print("Your guess was too high! The secret number is " + str(secret))
     return None
 
-
 if __name__ == "__main__":
     """Where our code is ran."""
     guess_a_number()
