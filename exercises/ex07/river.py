@@ -1,10 +1,11 @@
 """File to define River class."""
+__author__: str = "730767591"
 
-from ex07.fish import Fish
-from ex07.bear import Bear
+from exercises.ex07.fish import Fish
+from exercises.ex07.bear import Bear
 
 class River:
-    
+    """Establishing our River Class"""
     day: int
     fish: list[Fish]
     bears: list[Bear]
@@ -21,21 +22,56 @@ class River:
             self.bears.append(Bear())
 
     def check_ages(self):
+        """Checking the ages of fish and bears"""
+        temp_fish: list[Fish] = []
+        for i in self.fish:
+            if i.age <= 3:
+                temp_fish.append(i)
+        self.fish = temp_fish
+
+        temp_bears: list[Bear] = []
+        for j in self.bears:
+            if j.age <= 5:
+                temp_bears.append(j)
+        self.bears = temp_bears
+
         return None
+    
+    def remove_fish(self, amount: int) -> None:
+        for i in range(amount):
+            self.fish.pop(0)
+        return None 
 
     def bears_eating(self):
+        for i in self.bears:
+            if len(self.fish) >= 5:
+                self.remove_fish(3)
+                i.eat(num_fish=3)
+        
         return None
     
     def check_hunger(self):
+        temp_bears: list[Bear] = []
+        for i in range(len(self.bears)):
+            if self.bears[i].hunger_score < 0:
+                temp_bears.append(self.bears[i])
+        self.bears = temp_bears
         return None
         
     def repopulate_fish(self):
+        for i in range((len(self.fish)//2) * 4):
+            self.fish.append(Fish())
         return None
     
     def repopulate_bears(self):
+        for i in range(len(self.bears)//2):
+            self.bears.append(Bear())
         return None
     
     def view_river(self):
+        print(f"~~~ Day {self.day}: ~~~")
+        print(f"Fish population: {len(self.fish)}")
+        print(f"Bear population: {len(self.bears)}")
         return None
             
     def one_river_day(self):
@@ -61,3 +97,7 @@ class River:
         # Visualize River
         self.view_river()
             
+    def one_river_week(self):
+        """Simulate one week of life in the river."""
+        for i in range(7):
+            self.one_river_day()
