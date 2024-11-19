@@ -77,3 +77,13 @@ def recursive_range(start: int, end: int) -> None | Node:
         rest: Node | None = recursive_range(start + 1, end)
         # 3. Return a new node which is the first followed by the rest.
         return Node(first, rest)
+
+
+def factorial(n: int) -> int:
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+
+print(factorial(n=7))
